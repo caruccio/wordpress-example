@@ -19,7 +19,7 @@ mkdir -p ${install_dir}
 WP_FILE="wordpress-${install_version}-pt_BR.tar.gz"
 WP_URL="http://br.wordpress.org/${WP_FILE}"
 pushd ${install_dir} >/dev/null
-curl -s $WP_URL > wordpress-${install_version}.tar.gz
+curl -s $WP_URL > ${WP_FILE}
 
 # Verify the sources
 #
