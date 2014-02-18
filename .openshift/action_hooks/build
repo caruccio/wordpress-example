@@ -16,7 +16,11 @@ current_version_dir=${OPENSHIFT_DATA_DIR}current
 
 mkdir -p ${install_dir}
 
-WP_FILE="wordpress-${install_version}-pt_BR.tar.gz"
+if [ -n "${WP_LANG}" ]; then
+  WP_LANG="-${WP_LANG}"
+fi
+
+WP_FILE="wordpress-${install_version}${WP_LANG}.tar.gz"
 WP_URL="http://br.wordpress.org/${WP_FILE}"
 pushd ${install_dir} >/dev/null
 curl -s $WP_URL > ${WP_FILE}
