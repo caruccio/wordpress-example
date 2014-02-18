@@ -29,7 +29,7 @@ curl -s $WP_URL > ${WP_FILE}
 # Verify the sources
 #
 tarball_md5=$(md5sum ${WP_FILE} | cut -d ' ' -f 1)
-wordpress_md5=$(curl -s ${WP_FILE}.md5)
+wordpress_md5=$(curl -s ${WP_URL}.md5)
 
 if [ "${tarball_md5}" != "${wordpress_md5}" ]; then
   echo "ERROR: Wordpress ${install_version} MD5 checksum mismatch."
