@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -x
 # To update the version shipped in this quickstart, bump this variable:
 #
 install_version="3.8.1"
